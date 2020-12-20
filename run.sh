@@ -1,5 +1,6 @@
 mkdir -p data/
 
+echo "Downloading..."
 python3 ./transformers/alerts.py
 python3 ./transformers/case-history.py
 python3 ./transformers/case-location.py
@@ -13,3 +14,4 @@ python3 ./transformers/dubious-shop.py
 python3 ./transformers/hygiene-tips.py
 python3 ./transformers/friendly-links.py
 python3 ./transformers/site-i18n.py
+echo "Download script exiting... code: " $?
