@@ -20,6 +20,13 @@ csv_df = pd.DataFrame(pd.read_csv(
 # drop specific columns
 csv_df.drop('enabled', inplace=True, axis=1)
 
+# strip all whitespace in case_no
+csv_df["case_no"] = csv_df["case_no"].str.replace(" ", "")
+
+# split case_no into array
+csv_df["case_no"] = csv_df["case_no"].str.split(",")
+
+# select specific columns
 csv_df = csv_df[["case_no", "name_zh", "name_en", "description_zh", "description_en"]]
 
 # convert and save the json file
