@@ -67,7 +67,5 @@ tables_array = [csv_df_table1, csv_df_table2]
 
 final_table = pd.concat(tables_array)
 
-print(len(final_table))
-
 # convert and save the json file
-# final_table.to_json("data/case-history.json", orient="records", force_ascii=False)
+final_table.to_json("data/case-history.json", orient="records", force_ascii=False)
