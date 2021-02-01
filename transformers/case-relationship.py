@@ -17,6 +17,9 @@ csv_df = pd.DataFrame(pd.read_csv(
   io.StringIO(r.text), sep=",", header=0, index_col=None, skiprows=1
 ))
 
+# drop disabled rows
+csv_df = csv_df[csv_df.enabled == "Y"]
+
 # drop specific columns
 csv_df.drop('enabled', inplace=True, axis=1)
 
